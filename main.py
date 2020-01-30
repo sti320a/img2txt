@@ -56,8 +56,9 @@ if __name__ == "__main__":
     tool = get_ocr_tool()
     if tool:
         src = './images/book.png'
-        out = './images/ret.png'
+        out_png = './images/ret.png'
+        out_txt = './text/ret.txt'
         lang = 'jpn'
         layout = 1
-        save_img(src, out, lang, layout)
-        get_text(src, out, lang, layout)
+        save_img(src, out_png, lang, layout)
+        get_text(src, out_txt, lang, layout)
