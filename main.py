@@ -46,8 +46,8 @@ def get_text(
         lang=lang,
         builder=builder
     )
-    ret.replace(' ', '')
     with open(out_path, 'w') as f:
+        ret = ret.replace(' ', '')
         f.write(ret)
     return ret
 
@@ -55,10 +55,22 @@ def get_text(
 if __name__ == "__main__":
     tool = get_ocr_tool()
     if tool:
-        src = './images/book.png'
-        out_png = './images/ret.png'
-        out_txt = './text/ret.txt'
+        src = './images/test.png'
         lang = 'jpn'
         layout = 1
-        save_img(src, out_png, lang, layout)
-        get_text(src, out_txt, lang, layout)
+
+        out_png = './images/test_ret.png'
+        save_img(
+            src,
+            out_png,
+            lang,
+            layout
+        )
+
+        out_txt = './text/test_ret.txt'
+        get_text(
+            src,
+            out_txt,
+            lang,
+            layout
+        )
