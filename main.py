@@ -12,11 +12,11 @@ def get_ocr_tool():
 if __name__ == "__main__":
     tool = get_ocr_tool()
     if tool:
-        path = './images/test.png'
+        path = './images/book.png'
         lang = 'jpn'
         text = tool.image_to_string(
             Image.open(path),
             lang=lang,
             builder=pyocr.builders.TextBuilder(tesseract_layout=6)
         )
-        print(text)
+        print(text.replace(' ', ''))
